@@ -48,7 +48,7 @@ class DataIngestionConfig:
 
             self.data_ingestion_dir = os.path.join(training_pipeline_config.artifact_dir, "data_ingestion")
 
-            self.feature_store_path = os.path.join(self.data_ingestion_dir, "feature_store", FILE_NAME)
+            self.feature_store_file_path = os.path.join(self.data_ingestion_dir, "feature_store", FILE_NAME)
 
             self.train_file_path = os.path.join(self.data_ingestion_dir, "dataset", TRAIN_FILE_NAME)
 
