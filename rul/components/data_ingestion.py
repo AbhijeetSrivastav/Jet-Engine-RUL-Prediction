@@ -52,6 +52,7 @@ class DataIngestion:
             # Creating dataset directory
             logging.info(f"Creating dataset director y if not exist")
             dataset_dir = os.path.dirname(self.data_ingestion_config.train_file_path)
+            os.makedirs(dataset_dir, exist_ok=True)
 
             # Splitting dataset into train and test set
             logging.info(f"Performing Train Test Split")
