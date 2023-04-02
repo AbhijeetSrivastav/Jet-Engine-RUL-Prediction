@@ -64,3 +64,27 @@ class DataIngestionConfig:
                 return self.___dict__
             except Exception as e:
                 raise RULException(e, sys)
+            
+
+class DataValidationConfig:
+    """
+    Configuration for Data Validation Component
+    -----------------------------------------------------------------
+    input:
+    - `training_pipeline_config`: configuration of training pipeline
+    -----------------------------------------------------------------
+    return: `None`
+    """
+
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig) -> None:
+        try:
+            self.data_validation_dir  = os.path(training_pipeline_config.artifact_dir, "data_validation")
+
+            self.report_file_path = os.path.join(self.data_validation_dir, "report")
+
+            self.missing_value_threshold = 0.2
+
+            self.base_file_path = os.path.join("rul.csv")
+
+        except Exception as e:
+            raise RULException(e, sys)
