@@ -78,105 +78,105 @@ class DataValidation:
         except Exception as e:
             raise RULException(e, sys)
 
-def is_required_columns_exist(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key: str) -> bool:
-    """
-    Drops the columns from DataFrame which have null value percent more than threshold
-    ---------------------------------------------------------------------
-    input:
-    - `base_df`: DataFrame from which we are validating(base info)
-    - `current_df`: DataFrame which we are validating
-    - `report_key`: Name of the key with which ot save report in self.validation_error attribute
-    ---------------------------------------------------------------------
-    return: `True` if required columns exist else `False`
-    """
+    def is_required_columns_exist(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key: str) -> bool:
+        """
+        Drops the columns from DataFrame which have null value percent more than threshold
+        ---------------------------------------------------------------------
+        input:
+        - `base_df`: DataFrame from which we are validating(base info)
+        - `current_df`: DataFrame which we are validating
+        - `report_key`: Name of the key with which ot save report in self.validation_error attribute
+        ---------------------------------------------------------------------
+        return: `True` if required columns exist else `False`
+        """
 
-    try:
-        # Initializing columns of base and current data frame
-        logging.info(f"Initializing columns of base and current data frame")
-        base_columns = base_df.columns
-        current_columns = current_df.columns
+        try:
+            # Initializing columns of base and current data frame
+            logging.info(f"Initializing columns of base and current data frame")
+            base_columns = base_df.columns
+            current_columns = current_df.columns
 
-        # Initializing missing columns to store missing column names
-        missing_columns = []
+            # Initializing missing columns to store missing column names
+            missing_columns = []
 
-        # Check for the columns which are in base data frame but not in current data frame
-        logging.info(f"Checking for the columns which are in base data frame but not in current data frame")
-        for base_columns in base_columns:
-            if base_columns not in current_columns:
-                missing_columns.append(base_columns)
+            # Check for the columns which are in base data frame but not in current data frame
+            logging.info(f"Checking for the columns which are in base data frame but not in current data frame")
+            for base_columns in base_columns:
+                if base_columns not in current_columns:
+                    missing_columns.append(base_columns)
+            
+            # Return True if missing columns, else Return False and add to report
+            if len(missing_columns) > 0:
+                logging.info(f"No missing column found")
+                self.validation_error[report_key] = missing_columns
+                return False
+            
+            logging.info(f"Missing column found")
+            return True
+
+        except Exception as e:
+            raise RULException(e, sys)
         
-        # Return True if missing columns, else Return False and add to report
-        if len(missing_columns) > 0:
-            logging.info(f"No missing column found")
-            self.validation_error[report_key] = missing_columns
-            return False
-        
-        logging.info(f"Missing column found")
-        return True
+    def data_drift(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key: str) ->None:
+        """
+        Calculates Data Drift in base and current DataFrame
+        - Null Hypothesis is that both column data are drawn from same distribution
+        ---------------------------------------------------------------------------------------------
+        input:
+        - `base_df`: DataFrame from which we are validating(base info)
+        - `current_df`: DataFrame which we are validating
+        - `report_key`: Name of the key with which to save report in self.validation_error attribute
+        ---------------------------------------------------------------------------------------------
+        return: `None
+        """
 
-    except Exception as e:
-        raise RULException(e, sys)
-    
-def data_drift(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key: str) ->None:
-    """
-    Calculates Data Drift in base and current DataFrame
-    - Null Hypothesis is that both column data are drawn from same distribution
-    ---------------------------------------------------------------------------------------------
-    input:
-    - `base_df`: DataFrame from which we are validating(base info)
-    - `current_df`: DataFrame which we are validating
-    - `report_key`: Name of the key with which to save report in self.validation_error attribute
-    ---------------------------------------------------------------------------------------------
-    return: `None
-    """
+        try:
+            # Initializing data drift dict to store drift stats
+            logging.info(f"Initializing data drift dictionary")
+            drift_report = dict()
 
-    try:
-        # Initializing data drift dict to store drift stats
-        logging.info(f"Initializing data drift dictionary")
-        drift_report = dict()
+            # Initializing columns of base and current data frame
+            logging.info(f"Initializing columns of base and current data frame")
+            base_columns = base_df.columns
+            current_columns = current_df.columns
 
-        # Initializing columns of base and current data frame
-        logging.info(f"Initializing columns of base and current data frame")
-        base_columns = base_df.columns
-        current_columns = current_df.columns
+            # Collecting for each column in base dataframe
+            for base_column in base_columns:
+                # ----NULL HYPOTHESIS----
+                # Creating base_data and current_data DataFrame only for all the columns which are common in base and current DataFrame
+                logging.info(f"Creating base and current data")
+                base_data, current_data = base_df[base_column], current_df[base_column]
 
-        # Collecting for each column in base dataframe
-        for base_column in base_columns:
-            # ----NULL HYPOTHESIS----
-            # Creating base_data and current_data DataFrame only for all the columns which are common in base and current DataFrame
-            logging.info(f"Creating base and current data")
-            base_data, current_data = base_df[base_column], current_df[base_column]
+                logging.info(f"Hypothesis {base_column}: {base_data.dtype}, {current_data.dtype}")
 
-            logging.info(f"Hypothesis {base_column}: {base_data.dtype}, {current_data.dtype}")
+                # Checking distribution
+                logging.info(f"Calculating stats for distribution analysis")
+                same_distribution = ks_2samp(base_data, current_data)
 
-            # Checking distribution
-            logging.info(f"Calculating stats for distribution analysis")
-            same_distribution = ks_2samp(base_data, current_data)
-
-            # Updating drift report based on same distribution
-            logging.info(f"Creating drift report for distribution")
-            if same_distribution.pvalue > 0.05:
-                # -----Accepting NULL HYPOTHESIS------
-                logging.info(f"Accepting Null Hypothesis")
-                drift_report[base_column] = {
-                    "pvalues": float(same_distribution.pvalue),
-                    "same_distribution": True
+                # Updating drift report based on same distribution
+                logging.info(f"Creating drift report for distribution")
+                if same_distribution.pvalue > 0.05:
+                    # -----Accepting NULL HYPOTHESIS------
+                    logging.info(f"Accepting Null Hypothesis")
+                    drift_report[base_column] = {
+                        "pvalues": float(same_distribution.pvalue),
+                        "same_distribution": True
+                        }
+                else:
+                    # -------Rejecting NULL HYPOTHESIS-----
+                    logging.info(f"Rejecting Null Hypothesis")
+                    drift_report[base_column] = {
+                        "pvalues": float(same_distribution.pvalue),
+                        "same_distribution": False
                     }
-            else:
-                # -------Rejecting NULL HYPOTHESIS-----
-                logging.info(f"Rejecting Null Hypothesis")
-                drift_report[base_column] = {
-                    "pvalues": float(same_distribution.pvalue),
-                    "same_distribution": False
-                }
 
-            # Adding report about distribution
-            logging.info(f"Adding report about drift in validation error")
-            self.validation_error[report_key] = drift_report
+                # Adding report about distribution
+                logging.info(f"Adding report about drift in validation error")
+                self.validation_error[report_key] = drift_report
 
-    except Exception as e:
-        raise RULException(e, sys)
-    
+        except Exception as e:
+            raise RULException(e, sys)
+        
     def initiate_data_validation(self) -> artifact_entity.DataValidationArtifact:
         """
         Initiates Data Validation Component
@@ -200,7 +200,6 @@ def data_drift(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key
             # Replace Na values in base dataframe with Nan
             logging.info(f"Replace Na values in base dataFrame with Nan")
             base_df.replace({"na": np.Nan}, inplace=True)
-
             # Drop missing values from base dataFrame
             logging.info(f"Drop missing values columns from base dataFrame")
             base_df = self.drop_missing_values_columns(df=base_df, report_key="missing_values_within_base_dataset")
@@ -208,8 +207,7 @@ def data_drift(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key
             # Drop missing values from train dataFrame
             logging.info(f"Drop missing values columns from train dataFrame")
             train_df = self.drop_missing_values_columns(df=train_df, report_key="missing_values_within_train_dataset")
-
-            
+  
             # Drop missing values from test dataFrame
             logging.info(f"Drop missing values columns from test dataFrame")
             test_df = self.drop_missing_values_columns(df=test_df, report_key="missing_values_within_test_dataset")
@@ -255,6 +253,6 @@ def data_drift(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key
             data_validation_artifact = artifact_entity.DataValidationArtifact(report_file_path=self.data_validation_config.report_file_path)
 
             return data_validation_artifact
-                
+                    
         except Exception as e:
             raise RULException(e, sys)
