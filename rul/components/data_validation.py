@@ -195,7 +195,7 @@ class DataValidation:
             train_df = pd.read_csv(self.data_ingestion_artifact.train_file_path)
 
             # Reading test DataFrame
-            test_df = pd.read_csv(self.data_validation.test_file_path)
+            test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
 
             # Replace Na values in base dataframe with Nan
             logging.info(f"Replace Na values in base dataFrame with Nan")
