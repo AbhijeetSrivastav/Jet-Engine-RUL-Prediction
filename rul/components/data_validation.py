@@ -116,3 +116,63 @@ def is_required_columns_exist(self, base_df: pd.DataFrame, current_df: pd.DataFr
 
     except Exception as e:
         raise RULException(e, sys)
+    
+def data_drift(self, base_df: pd.DataFrame, current_df: pd.DataFrame, report_key: str) ->None:
+    """
+    Calculates Data Drift in base and current DataFrame
+    - Null Hypothesis is that both column data are drawn from same distribution
+    ---------------------------------------------------------------------------------------------
+    input:
+    - `base_df`: DataFrame from which we are validating(base info)
+    - `current_df`: DataFrame which we are validating
+    - `report_key`: Name of the key with which to save report in self.validation_error attribute
+    ---------------------------------------------------------------------------------------------
+    return: `None
+    """
+
+    try:
+        # Initializing data drift dict to store drift stats
+        logging.info(f"Initializing data drift dictionary")
+        drift_report = dict()
+
+        # Initializing columns of base and current data frame
+        logging.info(f"Initializing columns of base and current data frame")
+        base_columns = base_df.columns
+        current_columns = current_df.columns
+
+        # Collecting for each column in base dataframe
+        for base_column in base_columns:
+            # ----NULL HYPOTHESIS----
+            # Creating base_data and current_data DataFrame only for all the columns which are common in base and current DataFrame
+            logging.info(f"Creating base and current data")
+            base_data, current_data = base_df[base_column], current_df[base_column]
+
+            logging.info(f"Hypothesis {base_column}: {base_data.dtype}, {current_data.dtype}")
+
+            # Checking distribution
+            logging.info(f"Calculating stats for distribution analysis")
+            same_distribution = ks_2samp(base_data, current_data)
+
+            # Updating drift report based on same distribution
+            logging.info(f"Creating drift report for distribution")
+            if same_distribution.pvalue > 0.05:
+                # -----Accepting NULL HYPOTHESIS------
+                logging.info(f"Accepting Null Hypothesis")
+                drift_report[base_column] = {
+                    "pvalues": float(same_distribution.pvalue),
+                    "same_distribution": True
+                    }
+            else:
+                # -------Rejecting NULL HYPOTHESIS-----
+                logging.info(f"Rejecting Null Hypothesis")
+                drift_report[base_column] = {
+                    "pvalues": float(same_distribution.pvalue),
+                    "same_distribution": False
+                }
+
+            # Adding report about distribution
+            logging.info(f"Adding report about drift in validation error")
+            self.validation_error[report_key] = drift_report
+
+    except Exception as e:
+        raise RULException(e, sys)
