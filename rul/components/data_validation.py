@@ -199,7 +199,7 @@ class DataValidation:
 
             # Replace Na values in base dataframe with Nan
             logging.info(f"Replace Na values in base dataFrame with Nan")
-            base_df.replace({"na": np.Nan}, inplace=True)
+            base_df.replace({"na": np.NAN}, inplace=True)
             # Drop missing values from base dataFrame
             logging.info(f"Drop missing values columns from base dataFrame")
             base_df = self.drop_missing_values_columns(df=base_df, report_key="missing_values_within_base_dataset")
