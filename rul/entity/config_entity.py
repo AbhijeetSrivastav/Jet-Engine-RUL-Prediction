@@ -88,3 +88,27 @@ class DataValidationConfig:
 
         except Exception as e:
             raise RULException(e, sys)
+        
+
+class DataTransformation:
+    """
+    Configuration for Data Transformation Component
+    ------------------------------------------------------------------
+    input:
+    - `training_pipeline_config`: configuration of training pipeline
+    ------------------------------------------------------------------
+    return: `None`
+    """
+
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig) -> None:
+        try:
+            self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir, "data_transformation")
+
+            self.data_transformer_object_path = os.path.join(self.data_transformation_dir, "transformer")
+
+            self.data_transformed_train_path = os.path.join(self.data_transformation_dir, "transformed", TRAIN_FILE_NAME)
+
+            self.data_transformed_test_path = os.path.join(self.data_transformation_dir, "transformed", TEST_FILE_NAME)
+
+        except Exception as e:
+            raise RULException(e, sys)
