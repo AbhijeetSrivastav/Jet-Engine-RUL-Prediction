@@ -63,3 +63,25 @@ def convert_columns_float(df: pd.DataFrame, exclude_columns: list) -> pd.DataFra
         return df
     except Exception as e:
         raise RULException(e, sys)
+    
+def write_yaml_file(file_path: str, data: dict) -> None:
+    """
+    Writes any data to yaml format
+    ----------------------------------------------------
+    input:
+    - `file_path`: output file name
+    - `data`: dictionary to be wrote as yaml
+    -----------------------------------------------------
+    return: `None`
+    """
+
+    try:
+        # Making directory to store YAML file
+        file_dir = os.path.dirname(file_path)
+        os.makedirs(file_dir, exist_ok=True)
+
+        # Write YAML file
+        with open(file_path, "w") as file:
+            yaml.dump(data, file)
+    except Exception as e:
+        raise RULException(e, sys)
