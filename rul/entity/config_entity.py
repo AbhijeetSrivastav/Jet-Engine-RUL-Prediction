@@ -90,7 +90,7 @@ class DataValidationConfig:
             raise RULException(e, sys)
         
 
-class DataTransformation:
+class DataTransformationConfig:
     """
     Configuration for Data Transformation Component
     ------------------------------------------------------------------
