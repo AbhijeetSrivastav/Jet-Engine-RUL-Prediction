@@ -28,3 +28,19 @@ class DataValidationArtifact:
     - `report_file_path`: path of the validation report
     """
     report_file_path: str
+
+
+@dataclass
+class DataTransformationArtifact:
+    """
+    Artifact for Data Transformation component
+    -----------------------------------------------------------------
+    return:
+    - `transformer_object_path:`: path of the transformed object
+    - `transformed_train_path`: path of the transformed train dataset array
+    -  `transformed_test_path`: path of the transformed test dataset array
+    """
+
+    transformer_object_path: str
+    transformed_train_path: str
+    transformed_test_path: str
