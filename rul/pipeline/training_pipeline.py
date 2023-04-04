@@ -35,6 +35,7 @@ def start_training_pipeline():
         data_validation_artifact = data_validation.initiate_data_validation()
 
         # Data Transformation
+        logging.info(f"-----------------Initiating Data Transformation-----------------")
         data_transformation_config = config_entity.DataTransformationConfig(training_pipeline_config=training_pipeline_config)
 
         data_transformation = DataTransformation(data_transformation_config=data_transformation_config, data_ingestion_artifact=data_ingestion_artifact)
