@@ -35,3 +35,31 @@ class DataTransformation:
         
         except Exception as e:
             raise RULException(e, sys)
+        
+    @classmethod
+    def get_data_transformer_object(cls) -> Pipeline:
+        """
+        Creates a pipeline based on experimentation done during EDA
+        -------------------------------------------------------------
+        input:
+        - 'None`
+        -------------------------------------------------------------
+        return: `None`
+        """
+
+        try:
+            simple_imputer = SimpleImputer(strategy="constant", fill_value=0)
+
+            min_max_scaler = MinMaxScaler()
+
+            logging.info(f"Creating transformation object")
+            pipeline = Pipeline(steps=[
+                ("Imputer", simple_imputer),
+                ("Min Max Scaler", min_max_scaler)
+            ])
+
+            return pipeline
+        
+        except Exception as e:
+            raise RULException(e, sys)
+
