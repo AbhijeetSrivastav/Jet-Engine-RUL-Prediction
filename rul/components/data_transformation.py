@@ -62,7 +62,7 @@ class DataTransformation:
         except Exception as e:
             raise RULException(e, sys)
     
-    def add_RUL_feature(df: pd.DataFrame) -> pd.DataFrame:
+    def add_RUL_feature(self, df: pd.DataFrame) -> pd.DataFrame:
         """"
         Adds target feature RUL to the dataframe
         ---------------------------------------------
