@@ -134,4 +134,26 @@ def load_object(file_path: str) -> object:
     
     except Exception as e:
         raise RULException(e, sys)
-        
+
+
+def save_numpy_array_data(file_path: str, array: np.array) -> None:
+    """
+    Save numpy array to specified location
+    ----------------------------------------------------------
+    input:
+    - `file_path`: path where to save array
+    - `array`: array to save
+    """
+
+    try:
+        # Making directory to store array data
+        dir_path = os.path.dirname(file_path)
+        os.makedirs(dir_path, exist_ok=True)
+
+        # Save array data
+        logging.info(f"Saving the array data")
+        with open(file_path, "wb") as array_file:
+            np.save(array_file, array)
+    
+    except Exception as e:
+        raise RULException(e, sys)
