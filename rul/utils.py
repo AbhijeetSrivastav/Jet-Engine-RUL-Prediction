@@ -110,3 +110,28 @@ def save_object(file_path: str, obj: object) -> None:
     
     except Exception as e:
         raise RULException(e, sys)
+    
+
+def load_object(file_path: str) -> object:
+    """
+    Load specified object
+    --------------------------------------------------
+    input:
+    - `file_path`: path where object is
+    --------------------------------------------------
+    return: `None`
+    """
+
+    try:
+        # Checking if file path exist or not
+        if not os.path.exists(file_path):
+            raise Exception("File path: {file_path} doesn't exist")
+        
+        # Load object file
+        logging.info(f"Loading object file")
+        with open(file_path, "rb") as obj_file:
+            return dill.load(obj_file)
+    
+    except Exception as e:
+        raise RULException(e, sys)
+        
