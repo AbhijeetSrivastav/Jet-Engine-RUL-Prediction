@@ -25,4 +25,4 @@ env_var = EnvironmentVariable()
 mongo_client  = pymongo.MongoClient(env_var.mongo_db_url)
 
 # declaring the target column
-TARGET_COLUMN = "class"
+TARGET_COLUMN = "RUL"
