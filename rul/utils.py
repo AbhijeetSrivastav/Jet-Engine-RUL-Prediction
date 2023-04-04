@@ -119,7 +119,7 @@ def load_object(file_path: str) -> object:
     input:
     - `file_path`: path where object is
     --------------------------------------------------
-    return: `None`
+    return: `obj`
     """
 
     try:
@@ -143,6 +143,8 @@ def save_numpy_array_data(file_path: str, array: np.array) -> None:
     input:
     - `file_path`: path where to save array
     - `array`: array to save
+    -----------------------------------------------------------
+    return: `None`
     """
 
     try:
