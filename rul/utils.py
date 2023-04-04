@@ -64,6 +64,7 @@ def convert_columns_float(df: pd.DataFrame, exclude_columns: list) -> pd.DataFra
     except Exception as e:
         raise RULException(e, sys)
     
+
 def write_yaml_file(file_path: str, data: dict) -> None:
     """
     Writes any data to yaml format
@@ -83,5 +84,29 @@ def write_yaml_file(file_path: str, data: dict) -> None:
         # Write YAML file
         with open(file_path, "w") as file:
             yaml.dump(data, file)
+    except Exception as e:
+        raise RULException(e, sys)
+
+
+def save_object(file_path: str, obj: object) -> None:
+    """
+    Save given object to specified location
+    --------------------------------------------------------
+    input:
+    -  `file_path`: path where to save object
+    - `obj`: object to save
+    ---------------------------------------------------------
+    return: `None`
+    """
+
+    try:
+        # Making directory to store object file
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+        # Save object file
+        logging.info(f"Saving the object file")
+        with open(file_path, "wb") as obj_file:
+            dill.dump(obj, obj_file)
+    
     except Exception as e:
         raise RULException(e, sys)
