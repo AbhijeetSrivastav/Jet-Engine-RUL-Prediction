@@ -40,7 +40,21 @@ class DataTransformationArtifact:
     - `transformed_train_path`: path of the transformed train dataset array
     -  `transformed_test_path`: path of the transformed test dataset array
     """
-
     transformer_object_path: str
     transformed_train_path: str
     transformed_test_path: str
+
+
+@dataclass
+class ModelTrainerArtifact:
+    """
+    Artifact for Model Trainer component
+    ------------------------------------------
+    return:
+    - `model_path`: path of the model object
+    - `r2_train_score`: r2 score of train set
+    - `r2_test_score`: r2 score for
+    """
+    model_path: str
+    r2_train_score: float
+    r2_test_score: float
