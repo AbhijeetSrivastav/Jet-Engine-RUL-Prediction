@@ -13,7 +13,6 @@ FILE_NAME = "rul.csv"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
 TRANSFORMER_OBJECT_FILE_NAME = "transformer.pkl"
-TARGET_ENCODER_FILE_OBJECT_NAME = "target_encoder.pkl"
 MODEL_FILE_NAME = "model.pkl"
 
 
@@ -151,6 +150,6 @@ class ModelEvaluationConfig:
     def __init__(self) -> None:
         try:
             self.change_threshold = 0.01
-            
+
         except Exception as e:
             raise RULException(e, sys)
