@@ -21,7 +21,6 @@ class ModelResolver:
      - `model_registry`: directory containing all sub directories which contain the models trained and their transformers till now in  artifacts of model training component
      - `model_dir_name`: directory name containing models which is in (model_registry -> subdir -> model)
      - `transformer_dir_name`: directory name containing models which is in (model_registry -> subdir -> transformer_dir_name)
-     - `target_encoder_dir_name`: directory name containing models which is in (model_registry -> subdir -> target_encoder_dir_name)
     -------------------------------------------------------------------------------------------------------------------------------------------------------
     return: `None`
     """ 
