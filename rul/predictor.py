@@ -69,3 +69,28 @@ class ModelResolver:
         
         except Exception as e:
             raise RULException(e, sys)
+
+    def get_latest_model_path(self):
+        """
+        Returns latest model path form the latest model subdir from model_registry
+        ---------------------------------------------------------------------------------
+        input:
+        - `None`
+        ----------------------------------------------------------------------------------
+        return: `latest_model_path`
+        """
+
+        try:
+            latest_dir_path = self.get_latest_dir_path()
+
+            # If no model in the path
+            if latest_dir_path is None:
+                logging.info(f"Model is not available!")
+                raise Exception(f"Model is not available!")
+            
+            latest_model_path = os.path.join(latest_dir_path, self.model_dir_name, MODEL_FILE_NAME)
+
+            return latest_model_path
+        
+        except Exception as e:
+            raise RULException(e, sys)
