@@ -149,3 +149,23 @@ class ModelResolver:
 
         except Exception as e:
             raise RULException(e, sys)     
+    
+    def get_latest_save_model_path(self):
+        """
+        Returns latest saved model path from the latest saved model subdir from model_registry
+        ---------------------------------------------------------
+        input:
+         - `None`
+        ---------------------------------------------------------
+         return: `latest_save_model_path`
+        """
+        try:
+            latest_save_dir_path = self.get_latest_save_dir_path()
+
+            latest_save_model_path = os.path.join(latest_save_dir_path, self.model_dir_name,MODEL_FILE_NAME)
+
+            return latest_save_model_path
+
+        except Exception as e:
+            raise RULException(e, sys)
+
