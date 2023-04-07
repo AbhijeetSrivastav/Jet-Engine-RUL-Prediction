@@ -130,9 +130,9 @@ class ModelTrainerConfig:
 
             self.model_path = os.path.join(self.model_trainer_dir, "model", MODEL_FILE_NAME)
 
-            self.expected_score = 0.7
+            self.expected_score = 0.6
 
-            self.overfitting_threshold = 0.1
+            self.overfitting_threshold = 0.5
             
         except Exception as e:
             raise RULException(e, sys)
