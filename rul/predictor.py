@@ -119,3 +119,33 @@ class ModelResolver:
         
         except Exception as e:
             raise RULException(e, sys)
+        
+        ##########################################################################
+
+    def get_latest_save_dir_path(self)->Optional[str]:
+        """
+        Returns latest saved model directory path if their any
+        ---------------------------------------------------------
+        input:
+         - `None`
+        ---------------------------------------------------------
+        return: `None` or `latest_save_dir_path`
+        """
+        try:
+            latest_dir_path = self.get_latest_dir_path()
+
+            # If no latest directory
+            if latest_dir_path is None:
+                logging.info(f"No latest saved model registry found!")
+                return os.path.join(self.model_registry,f"{0}")
+            
+            # Number name of the latest saved model sub directory
+            latest_dir_num = int(os.path.basename(self.get_latest_dir_path()))
+
+
+            latest_save_dir_path = os.path.join(self.model_registry, f"{latest_dir_num+1}")
+
+            return latest_save_dir_path
+
+        except Exception as e:
+            raise RULException(e, sys)     
