@@ -94,3 +94,28 @@ class ModelResolver:
         
         except Exception as e:
             raise RULException(e, sys)
+        
+    def get_latest_transformer_path(self):
+        """
+        Returns latest transformer path form the latest transformer subdir from model_registry
+        ---------------------------------------------------------------------------------------------
+        input:
+        - `None`
+        ---------------------------------------------------------------------------------------------
+        return: `latest_transformer_path`
+        """
+
+        try:
+            latest_dir_path = self.get_latest_dir_path()
+
+            # If no transformer in path
+            if latest_dir_path is None:
+                logging.info(f"Transformer is not available!")
+                raise Exception(f"Transformer is not available!")
+            
+            latest_transformer_path = os.path.join(latest_dir_path, self.transformer_dir_name, TRANSFORMER_OBJECT_FILE_NAME)
+
+            return latest_transformer_path
+        
+        except Exception as e:
+            raise RULException(e, sys)
