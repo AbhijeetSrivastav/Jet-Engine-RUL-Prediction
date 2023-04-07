@@ -136,3 +136,21 @@ class ModelTrainerConfig:
             
         except Exception as e:
             raise RULException(e, sys)
+        
+
+class ModelEvaluationConfig:
+    """
+    Configuration for Model Evaluation Component
+    -----------------------------------------------------------------
+    input:
+    - `training_pipeline_config`: configuration of training pipeline
+    -----------------------------------------------------------------
+    return: `None`
+    """
+
+    def __init__(self) -> None:
+        try:
+            self.change_threshold = 0.01
+            
+        except Exception as e:
+            raise RULException(e, sys)
