@@ -58,3 +58,16 @@ class ModelTrainerArtifact:
     model_path: str
     r2_train_score: float
     r2_test_score: float
+
+
+@dataclass
+class ModelEvaluationArtifact:
+    """
+    Artifact for Model Evaluation component
+    ---------------------------------------------------------------------------------------------------------------
+    return:
+    - `is_model_accepted`: boolean whether model is accepted to be pushed or deployed
+    - `improved_accuracy`: how much accuracy current built model has got as compared to model already in deployment
+    """
+    is_model_accepted: bool
+    improved_accuracy: float
