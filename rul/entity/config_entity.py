@@ -147,7 +147,7 @@ class ModelEvaluationConfig:
     return: `None`
     """
 
-    def __init__(self) -> None:
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig()) -> None:
         try:
             self.change_threshold = 0.01
 
