@@ -45,7 +45,7 @@ def start_training_pipeline():
 
         # Model Trainer
         logging.info(f"-----------------Initiating Model Trainer-----------------")
-        model_trainer_config = config_entity.ModelTrainerConfig(trainer_pipeline_config=training_pipeline_config)
+        model_trainer_config = config_entity.ModelTrainerConfig(training_pipeline_config=training_pipeline_config)
 
         model_trainer = ModelTrainer(model_trainer_config=model_trainer_config, data_transformation_artifact=data_transformation_artifact)
 
