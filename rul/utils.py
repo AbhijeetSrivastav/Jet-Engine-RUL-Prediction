@@ -125,7 +125,7 @@ def load_object(file_path: str) -> object:
     try:
         # Checking if file path exist or not
         if not os.path.exists(file_path):
-            raise Exception("File path: {file_path} doesn't exist")
+            raise Exception(f"File path: {file_path} doesn't exist")
         
         # Load object file
         logging.info(f"Loading object file")
