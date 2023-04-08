@@ -10,6 +10,7 @@ from rul.components.data_ingestion import DataIngestion
 from rul.components.data_validation import DataValidation
 from rul.components.data_transformation import DataTransformation
 from rul.components.model_trainer import ModelTrainer
+from rul.components.model_evaluation import ModelEvaluation
 
 
 def start_training_pipeline():
@@ -49,6 +50,14 @@ def start_training_pipeline():
         model_trainer = ModelTrainer(model_trainer_config=model_trainer_config, data_transformation_artifact=data_transformation_artifact)
 
         model_trainer_artifact = model_trainer.initiate_model_trainer()
+
+        # Model Evaluation
+        logging.info(f"-----------------Initiating Model Evaluation-----------------")
+        model_evaluation_config = config_entity.ModelEvaluationConfig(trainer_pipeline_config=training_pipeline_config)
+
+        model_evaluation = ModelEvaluation(model_evaluation_config=model_evaluation_config, data_ingestion_artifact=data_ingestion_artifact, data_transformation_artifact=data_transformation_artifact, model_trainer_artifact=model_trainer_artifact)
+
+        model_evaluation_artifact = model_evaluation.initiate_model_evaluation()
 
     except Exception as e:
         raise RULException(e, sys)
