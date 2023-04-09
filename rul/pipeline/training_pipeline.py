@@ -11,6 +11,7 @@ from rul.components.data_validation import DataValidation
 from rul.components.data_transformation import DataTransformation
 from rul.components.model_trainer import ModelTrainer
 from rul.components.model_evaluation import ModelEvaluation
+from rul.components.model_pusher import ModelPusher
 
 
 def start_training_pipeline():
@@ -58,6 +59,14 @@ def start_training_pipeline():
         model_evaluation = ModelEvaluation(model_evaluation_config=model_evaluation_config, data_ingestion_artifact=data_ingestion_artifact, data_transformation_artifact=data_transformation_artifact, model_trainer_artifact=model_trainer_artifact)
 
         model_evaluation_artifact = model_evaluation.initiate_model_evaluation()
+
+        # Model Pusher
+        logging.info(f"-----------------Initiating Model Pusher-----------------")
+        model_pusher_config = config_entity.ModelPusherConfig(training_pipeline_config=training_pipeline_config)
+
+        model_pusher = ModelPusher(model_pusher_config=model_pusher_config, data_transformation_artifact=data_transformation_artifact, model_trainer_artifact=model_trainer_artifact)
+
+        model_pusher_artifact = model_pusher.initiate_model_pusher()
 
     except Exception as e:
         raise RULException(e, sys)
