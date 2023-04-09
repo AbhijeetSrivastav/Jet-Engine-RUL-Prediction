@@ -57,14 +57,15 @@ class ModelEvaluation:
             # latest model directory path
             latest_dir_path = self.model_resolver.get_latest_dir_path()
 
-            # => Case I: If their is no model accept the current trained model (model trained in this pipeline run)
+            # => Case I: If their is no model, accept the current trained model (model trained in this pipeline run)
             if  latest_dir_path == None:
+                logging.info(f"Their is no model already saved, accepting the current trained model (model trained in this pipeline run)")
                 model_eval_artifact = artifact_entity.ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=None)
 
                 return model_eval_artifact
             
 
-            # =>CASE II: If their are previously saved model then compare it to current trained model
+            # => CASE II: If their are previously saved model then compare it to current trained model
 
             # Fetching the path of latest model, transformer (Already deployed ones)
             latest_transformer_path = self.model_resolver.get_latest_transformer_path()
@@ -95,17 +96,17 @@ class ModelEvaluation:
             
             # Loading test dataFrame
             logging.info(f"Loading test dataframe")
-            test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
+            test_arr = utils.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_test_path)
 
-            # Splitting test dataframe in target and input feature
-            logging.info(f"Splitting test dataframe in target and input feature")
-            y_true = test_df[:,-1]
 
             # ** Accuracy using latest model(already deployed one)
             logging.info(f"Calculating accuracy for latest model(already deployed one)")
-            input_feature_name = list(transformer.feature_names_in_)
+            test_arr = transformer.transform(test_arr)
 
-            input_arr = transformer.transform(test_df[input_feature_name])
+            logging.info(f"Splitting test dataframe in target and input feature")
+            input_arr = test_arr[:,:-1]
+            y_true = test_arr[:,-1]
+
 
             y_pred = model.predict(input_arr)
 
@@ -114,9 +115,12 @@ class ModelEvaluation:
 
             # ** Accuracy using the current model(model saved in this run of pipeline)
             logging.info(f"Calculating accuracy for latest saved model(current trained model)")
-            input_feature_name = list(current_transformer.feature_names_in_)
+            test_arr = current_transformer.transform(test_arr)
 
-            input_arr = current_transformer.transform(test_df[input_feature_name])
+            logging.info(f"Splitting test dataframe in target and input feature")
+            input_arr = test_arr[:,:-1]
+            y_true = test_arr[:,-1]
+
 
             y_pred = current_model.predict(input_arr)
 
