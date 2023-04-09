@@ -36,7 +36,7 @@ class ModelPusher:
 
     def initiate_model_pusher(self) -> artifact_entity.ModelPusherArtifact:
         try:
-            # => For saved_models directory
+            # => For model_pusher directory
             # Load Transformer and Model Object
             logging.info(f"Loading transformer object")
             transformer = utils.load_object(file_path=self.data_transformation_artifact.transformer_object_path)
@@ -51,25 +51,18 @@ class ModelPusher:
             utils.save_object(file_path=self.model_pusher_config.pusher_model_path, obj=model)
 
             
-            # => For artifact directory
+            # => For saved_model directory
             # Fetch path of latest Model, Transformer 
             logging.info(f"Fetching path of latest model, transformer object")
             transformer_path = self.model_resolver.get_latest_save_transformer_path()
 
             model_path = self.model_resolver.get_latest_save_model_path()
 
-            # Load latest save model and transformer object
-            logging.info(f"Loading latest saved transformer")
-            latest_save_transformer = utils.load_object(file_path=transformer_path)
-
-            logging.info(f"Loading latest saved model")
-            latest_save_model = utils.load_object(file_path=model_path)
-
             # Save latest Model, Transformer to saved_model directory
             logging.info(f"Saving model, transformer object save_models directory")
-            utils.save_object(file_path=transformer_path, obj=latest_save_transformer)
+            utils.save_object(file_path=transformer_path, obj=transformer)
 
-            utils.save_object(file_path=model_path, obj=latest_save_model)
+            utils.save_object(file_path=model_path, obj=model)
 
             # Prepare artifacts
             logging.info(f"Preparing Pusher artifacts")
