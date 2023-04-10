@@ -135,7 +135,7 @@ def custom_batch_prediction():
         uploaded_file_path = session.get("uploaded_file_path", None)
 
         # Renaming uploaded file to fit it in prediction file format
-        rename_as = "aps_failure_training_set.csv"
+        rename_as = "rul.csv"
         try:
             os.rename(UPLOAD_FOLDER + os.path.basename(uploaded_file_path), UPLOAD_FOLDER + rename_as)
         except WindowsError:
