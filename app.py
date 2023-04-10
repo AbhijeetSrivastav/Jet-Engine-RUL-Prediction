@@ -171,3 +171,23 @@ def download_custom_batch_prediction():
         download_name='prediction.csv',
         as_attachment=True
     )
+
+
+@app.route('/retrain', methods=['POST', 'GET'])
+def retrain():
+    """
+    Function to perform retraining
+    ------------------------------------------------------------
+    input: 
+    - `None`
+    ------------------------------------------------------------
+    return: `render_template("trainingreport.html")`
+    """
+
+    try:
+        start_training_pipeline()
+        message = "Current trained model is better than previous model! Saving the current model!"
+    except Exception as e:
+        message = "Current trained model is not better than previous model"
+    
+    return render_template("trainingreport.html", message=message)
