@@ -118,3 +118,39 @@ def upload_form():
     return: `render_template("uploadForm.html")`
     """
     return render_template("uploadForm.html")
+
+
+@app.route('/custom_batch_prediction', methods=['POST', 'GET'])
+def custom_batch_prediction():
+    """
+    Route for Custom Batch Prediction
+    ------------------------------------------------------------
+    input: 
+    - `None`
+    ------------------------------------------------------------
+    return: `render_template("customOutput.html")` else `render_template("warning.html")`
+    """
+
+    try:
+        uploaded_file_path = session.get("uploaded_file_path", None)
+
+        # Renaming uploaded file to fit it in prediction file format
+        rename_as = "aps_failure_training_set.csv"
+        try:
+            os.rename(UPLOAD_FOLDER + os.path.basename(uploaded_file_path), UPLOAD_FOLDER + rename_as)
+        except WindowsError:
+            os.remove(os.path.join(UPLOAD_FOLDER,rename_as))
+            os.rename(UPLOAD_FOLDER + os.path.basename(uploaded_file_path), UPLOAD_FOLDER + rename_as)
+            
+        renamed_uploaded_file_path = os.path.join(UPLOAD_FOLDER, rename_as)
+
+        # Performing batch prediction for custom dataset
+        custom_batch_prediction.prediction_file_path = start_batch_prediction(input_file_path=renamed_uploaded_file_path)
+
+        custom_prediction_df = pd.read_csv(custom_batch_prediction.prediction_file_path).head(1000)
+
+        return render_template("customOutput.html", tables=[custom_prediction_df.to_html(classes="dataframe", header=True)], titles=custom_prediction_df.columns.values)
+
+    except Exception as e:
+        message = "Correct format file not provided! Please provide file in csv format with appropriate structure"
+        return render_template("warning.html", message=message)
