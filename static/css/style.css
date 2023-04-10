@@ -1,0 +1,366 @@
+body {
+    background-color: black;
+  }
+  body * {
+    box-sizing: border-box;
+  }
+  
+
+/*----------CONTAINER STYLING----------*/
+
+.main-panel{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: normal;
+  align-content: normal;
+  overflow: auto;
+}
+
+.left-panel:nth-child(1){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  justify-content: left;
+  align-self: auto;
+  order: 0;
+  width: 40%;
+}
+
+.right-panel:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  height: max-content;
+  width: 60%;
+}
+
+.header-container-home:nth-child(1){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+
+}
+
+.btn-container-home:nth-child(2){
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: center;
+  margin: 2em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: 0;
+}
+
+.footer-container:nth-child(3){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  padding: 2em;
+  margin: 2em;
+  order: 0;
+}
+
+
+/*=======================Output Page================================*/
+
+.header-output-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  overflow: auto;
+}
+
+.btn-container-output:nth-child(1){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+/*=======================Training Report Page================================*/
+.report-main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: auto;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+
+/*=======================Upload Form Page================================*/
+.upload-form{
+  display: flex;
+  background-image: url("/static/lambo-wheels.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: auto;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*=======================Warning Report Page================================*/
+.warning-main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: auto;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*---------------------------------------------------------------*/
+
+
+
+/*----------ELEMENT STYLING----------*/
+
+.image-wall{
+  margin: auto;
+  justify-content: left;
+  width: 80%;
+  height: 100vh;
+}
+
+.header-home {
+  color: white;
+  font-size: 2.5em;
+  margin-top: 2em;
+  padding: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+  margin: 1.2em;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; 
+  color: #fff;
+  text-decoration: none;
+}
+
+.fa {
+  padding: 0em;
+  font-size: 2em;
+  width: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: solid;
+  transition: 0.5s;
+  color: white;            
+  box-shadow: 0 0 5px rgb(21, 20, 20);
+}
+
+.fa:hover {
+  background-position: right center; 
+  color: #DA22FF;
+  text-decoration: none;
+}
+
+.foot-note{
+  color: #9733EE;
+  font-size: 1em;
+  margin-top: 2em;
+  padding: 2rem;
+  text-align: center;
+}
+
+/*=======================Output Page================================*/
+
+.dataframe {
+  border: 4px solid #792396;
+  background-color: #555555;
+  border-collapse: collapse; 
+  text-align: center;
+  border: 1px solid silver;
+
+}
+
+.dataframe td, th {
+  border: 1px solid #555555;
+  padding: 5px 2px;
+}
+
+.dataframe th {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  background: coral;
+}
+
+.dataframe tr {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.dataframe tr:nth-child(even) {
+  background: #CC3BFC;
+}
+
+.dataframe tr:hover {
+  background: coral;
+  cursor: pointer;
+}
+
+.download-btn{
+  font-size: 0.8em;
+}
+
+
+/*=======================Training Report Page================================*/
+.report-msg{
+  display: block;
+  background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC  51%, #FC354C  100%);
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  padding: 2em;
+  margin: 2em;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.report-msg:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*=======================Upload Form Page================================*/
+input[type="file"] {
+  display: block;
+  background-image: linear-gradient(to right, #000000 0%, #434343  51%, #000000  100%);
+  color: white;            
+  box-shadow: 0 0 30px #DA22FF;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.upload-btn{
+  display: block;
+  background-image: linear-gradient(to right, #000000 0%, #434343  51%, #000000  100%);
+  color: white;            
+  box-shadow: 0 0 20px #DA22FF;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  margin: 1.5em auto ;
+  padding: 0.3em 2em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.upload-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*=======================Warning Page================================*/
+.warning-msg{
+  display: block;
+  background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC  51%, #FC354C  100%);
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  padding: 2em;
+  margin: 2em;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.warning-msg:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+/*---------------------------------------------------------------------*/
+
+
+
+/*----------MEDIA QUERIES------------*/
+@media screen and (max-width: 500px) {
+  .header {
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  img {
+    border: 3px solid;
+    border-color: #daeff1;
+    height: 100px;
+    margin: 0.5rem 0;
+    width: 100px;
+  }
+}
+
+/*---------------------------------------------------------------*/
