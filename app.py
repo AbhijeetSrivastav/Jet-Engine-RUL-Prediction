@@ -20,3 +20,18 @@ app.config['UPLOAD_FOLDER'] =  UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 30 * 1000 * 1000
 app.secret_key ="xy"
 
+
+@app.route('/', methods=['GET'])  
+@cross_origin()
+def homePage():
+    """
+    Route for homepage
+    ------------------------------------------------------------
+    input: 
+    - `None`
+    ------------------------------------------------------------
+    return: `render_template("home.html")`
+    """
+    return render_template("home.html")
+
+
