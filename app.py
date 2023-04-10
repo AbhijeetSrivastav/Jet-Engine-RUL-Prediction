@@ -105,3 +105,16 @@ def uploader():
         session["uploaded_file_path"] = os.path.join(app.config["UPLOAD_FOLDER"], data_filename)
 
         return redirect(url_for("custom_batch_prediction"))
+    
+
+@app.route('/upload_form', methods=['POST', 'GET'])
+def upload_form():
+    """
+    Route for Upload form
+    ------------------------------------------------------------
+    input: 
+    - `None`
+    ------------------------------------------------------------
+    return: `render_template("uploadForm.html")`
+    """
+    return render_template("uploadForm.html")
