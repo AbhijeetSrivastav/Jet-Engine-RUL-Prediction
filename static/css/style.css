@@ -117,7 +117,7 @@ body {
 /*=======================Upload Form Page================================*/
 .upload-form{
   display: flex;
-  background-image: url("/static/lambo-wheels.jpg");
+  background-image: url("/static/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
