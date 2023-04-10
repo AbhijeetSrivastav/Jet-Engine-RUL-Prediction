@@ -58,3 +58,20 @@ def run_batch_prediction():
         except Exception as e:
             message = "Batch Prediction Failed! Issue occurred at our end!"
         return render_template("warning.html", message=message)
+    
+
+@app.route('/download_batch_prediction') 
+def download_batch_prediction():
+    """
+    Function to download prediction from `run_batch_prediction`
+    ------------------------------------------------------------
+    input: 
+    - `None`
+    ------------------------------------------------------------
+    return: `prediction.csv`
+    """
+    return send_file(run_batch_prediction.prediction_file_path,
+        mimetype='text/csv',
+        download_name='prediction.csv',
+        as_attachment=True
+    )
