@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+
+
+{% endblock %}
+
+{% block body %}
+<div class="main-panel">
+    
+    <div class="left-panel image-container-wall">
+        <img class="image-wall" src="{{url_for('static', filename='wall.png')}}">
+    </div>
+    
+    
+    <div class="right-panel">
+        <div class="header-container header-container-home">
+            <h1 class="header-home">Jet Engine RUL Prediction</h1>
+        </div>
+        
+        
+        <div class="btn-container-home">
+            <div class="btn-home">
+                <form action="/batch_prediction" method="POST">
+                 <input class="btn-grad" type="submit" name="Batch Prediction" value="Batch Prediction"> 
+                </form>            
+             </div>
+     
+             <div class="btn-home">
+                 <form action="/upload_form" method="POST" enctype="multipart/form-data">
+                  <input class="btn-grad" type="submit" name="Custom Batch Prediction" value="Custom Batch Prediction"> 
+                 </form>            
+              </div>
+     
+              <div class="btn-home">
+                 <form action="/retrain" method="POST">
+                  <input class="btn-grad" type="submit" name="Re-Train" value="Initiate Retraining"> 
+                 </form>            
+              </div>
+        </div>
+
+        <div class="footer-container">
+            <a href="https://www.instagram.com/abhijeet.ai_/" class="fa fa-instagram"></a>
+
+            <a href="https://github.com/AbhijeetSrivastav/aps-sensor-fault-detection" class="fa fa-github"></a>
+            
+            <a href="https://www.linkedin.com/in/abhijeet-srivastav-02245a18b/" class="fa fa-linkedin"></a>
+
+            <h4 class="foot-note">Abhijeet Srivastav</h4>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+Footer
