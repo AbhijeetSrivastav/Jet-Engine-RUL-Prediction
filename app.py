@@ -35,3 +35,26 @@ def homePage():
     return render_template("home.html")
 
 
+@app.route('/batch_prediction', methods=['POST', 'GET'])
+def run_batch_prediction():
+    """
+    Route for Batch Prediction
+    -------------------------------------------------------------------------------
+    input: 
+    - `None`
+    -------------------------------------------------------------------------------
+    return: `render_template("output.html")` else `render_template("warning.html")`
+    """
+
+    if request.method == "POST":
+        try:
+            # Running batch prediction on base dataset
+            run_batch_prediction.prediction_file_path = start_batch_prediction(input_file_path='rul.csv')
+
+            prediction_df = pd.read_csv(run_batch_prediction.prediction_file_path).head(1000)
+
+            return render_template("output.html", tables=[prediction_df.to_html(classes="dataframe", header=True)], titles=prediction_df.columns.values)
+
+        except Exception as e:
+            message = "Batch Prediction Failed! Issue occurred at our end!"
+        return render_template("warning.html", message=message)
