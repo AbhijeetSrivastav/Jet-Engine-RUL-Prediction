@@ -75,3 +75,33 @@ def download_batch_prediction():
         download_name='prediction.csv',
         as_attachment=True
     )
+
+
+@app.route('/uploader', methods=['POST', 'GET']) 
+def uploader():
+    """
+    Uploads custom csv dataset for batch prediction
+    ------------------------------------------------------------
+    input: 
+    - `None`
+    ------------------------------------------------------------
+    return: `redirect(url_for("custom_batch_prediction"))`
+    """
+
+    if request.method == "POST":
+        # accessing uploaded file name
+        uploaded_file = request.files['file']
+
+        # extracting uploaded file name
+        data_filename  = secure_filename(uploaded_file.filename)
+
+        # flask upload file 
+        os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+
+        uploaded_file.save(os.path.join(app.config["UPLOAD_FOLDER"], data_filename))
+        print(os.path.join(app.config["UPLOAD_FOLDER"], data_filename))
+
+        # storing uploaded file path in flask session
+        session["uploaded_file_path"] = os.path.join(app.config["UPLOAD_FOLDER"], data_filename)
+
+        return redirect(url_for("custom_batch_prediction"))
