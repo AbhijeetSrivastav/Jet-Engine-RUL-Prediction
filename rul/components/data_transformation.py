@@ -47,7 +47,7 @@ class DataTransformation:
         """
 
         try:
-            simple_imputer = SimpleImputer(strategy="constant", fill_value=0)
+            simple_imputer = SimpleImputer(strategy="constant", fill_value=0, add_indicator=True)
 
             min_max_scaler = MinMaxScaler()
 
