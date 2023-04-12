@@ -95,12 +95,12 @@ perform a routine checkup.
     <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/git-scm/git-scm.svg" alt="git" height='42px'/>
 </a>
 
-<a href="https://www.mongodb.com/" target="_blank">
-    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
-</a>
-
 <a href="https://www.docker.com/" target="_blank">
     <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
+</a>
+
+<a href="https://www.mongodb.com/" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
 </a>
 
 
