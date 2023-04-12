@@ -79,36 +79,29 @@ perform a routine checkup.
 <!-- BUILD WITH -->
 <h2 id="build-with"> :hammer: Build With</h2>
 
-<center>
-<table>
-  <tr>
-        <td>
-          <a href="https://www.python.org" target="_blank">
-          <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/python/python.svg" alt="Python" height ="42px"/>
-        </td>
-        <td>
-          <a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank">
-            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/flask/flask.jpg" alt="flask" height="42px"/> 
-        </td>
-        <td>
-          <a href="https://scipy.org/" target="_blank">
-            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/scipy/scipy.png" alt="scipy" height="42px"/>
-        </td>
-        <td>
-          <a href="https://git-scm.com/" target="_blank">
-            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/git-scm/git-scm.svg" alt="git" height='42px'/>
-        </td>
-        <td>
-          <a href="https://www.mongodb.com/" target="_blank">
-            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
-        </td>
-        <td>
-          <a href="https://www.docker.com/" target="_blank">
-            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
-        </td>
-  </tr>
-</table>
-</center>      
+<a href="https://www.python.org" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/python/python.svg" alt="Python" height ="42px"/>
+</a>
+
+<a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/flask/flask.jpg" alt="flask" height="42px"/> 
+</a>
+
+<a href="https://scipy.org/" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/scipy/scipy.png" alt="scipy" height="42px"/>
+</a>
+
+ <a href="https://git-scm.com/" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/git-scm/git-scm.svg" alt="git" height='42px'/>
+</a>
+
+<a href="https://www.mongodb.com/" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
+</a>
+
+<a href="https://www.docker.com/" target="_blank">
+    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
+</a>
 
 
 ![-----------------------------------------------------](assets/rgb.png)
@@ -147,19 +140,19 @@ To get a local copy up and running follow these simple example steps.
 1. Clone the repo
 <pre><code>$ git clone https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction.git</code></pre>
 
-2. Create conda environment
+1. Create conda environment
 <pre><code>$ conda create -n jet-rul</code></pre>
 
-3. Activate the conda environment
+1. Activate the conda environment
 <pre><code>$ conda activate jet-rul </code></pre>
 
-4. Install requirements to conda environment
+1. Install requirements to conda environment
 <pre><code>$ pip install -r requirements.txt</code></pre>
 
-5. Navigate to project directory
+1. Navigate to project directory
 <pre><code>$ cd "Project Directory"</code></pre>
 
-6. Run flask app to get access to pipelines UI
+1. Run flask app to get access to pipelines UI
 <pre><code>$ python app.py </code></pre>
 
 
