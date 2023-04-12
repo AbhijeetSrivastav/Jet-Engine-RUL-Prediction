@@ -84,27 +84,27 @@ perform a routine checkup.
   <tr>
         <td>
           <a href="https://www.python.org" target="_blank">
-          <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/python/python.svg" alt="Python" height ="42px"/>
+          <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/python/python.svg" alt="Python" height ="42px"/>
         </td>
         <td>
           <a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank">
-            <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/flask/flask.jpg" alt="flask" height="42px"/> 
+            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/flask/flask.jpg" alt="flask" height="42px"/> 
         </td>
         <td>
           <a href="https://scipy.org/" target="_blank">
-            <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/scipy/scipy.png" alt="scipy" height="42px"/>
+            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/scipy/scipy.png" alt="scipy" height="42px"/>
         </td>
         <td>
           <a href="https://git-scm.com/" target="_blank">
-            <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/git-scm/git-scm.svg" alt="git" height='42px'/>
+            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/git-scm/git-scm.svg" alt="git" height='42px'/>
         </td>
         <td>
           <a href="https://www.mongodb.com/" target="_blank">
-            <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
+            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
         </td>
         <td>
           <a href="https://www.docker.com/" target="_blank">
-            <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
+            <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
         </td>
   </tr>
 </table>
