@@ -50,13 +50,12 @@
 
 Refer the following documents for better understanding of the dimensions of project.
 
-<center>
-    <ul>
-        <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/HLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">High Level Documentation (HLD)</a></li>
-        <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/LLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">Low Level Documentation (LLD)</a></li>
 
-    </ul>
-</center>
+<ul>
+    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/HLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">High Level Documentation (HLD)</a></li>
+    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/LLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">Low Level Documentation (LLD)</a></li>
+
+</ul>
 
 
 ![-----------------------------------------------------](assets/rgb.png)
@@ -81,8 +80,8 @@ perform a routine checkup.
 <h2 id="build-with"> :hammer: Build With</h2>
 
 <center>
-  <table>
-    <tr>
+<table>
+  <tr>
         <td>
           <a href="https://www.python.org" target="_blank">
           <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/python/python.svg" alt="Python" height ="42px"/>
@@ -107,10 +106,10 @@ perform a routine checkup.
           <a href="https://www.docker.com/" target="_blank">
             <img src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
         </td>
-
-    </tr>
-   </table>
+  </tr>
+</table>
 </center>      
+
 
 ![-----------------------------------------------------](assets/rgb.png)
 
@@ -118,22 +117,20 @@ perform a routine checkup.
 <!-- PROJECT FILES DESCRIPTION -->
 <h2 id="project-files-description"> :floppy_disk: Project Files Description</h2>
 
-<ul>
-  <li><b>research</b> - Contains base research paper and `experiments.ipynb` notebook</li>
-  <li><b>CMaps</b> - Data collected on different settings and configurations by NASA</li>
-  <li><b>rul</b> - Contains all the components, configurations, artifacts and pipelines</li>
-      <li><b>`components`</b> - Components of Data Pipelines</li>
-      <li><b>`entity`</b> - Configuration and artifact entity of components</li>
-      <li><b>`pipeline`</b> - Training and Batch pipeline</li>
-      <li><b>`config.py`</b> - Configuration of `rul` package</li>
-      <li><b>`exception.py`</b> - Exception handler of `rul` package</li>
-      <li><b>`logger.py`</b> - Logger of `rul` package</li>
-      <li><b>`predictor.py`</b> - Model Resolver</li>
-      <li><b>`utils.py`</b> - Collection of utility functions</li>
- <li><b>static</b> - Static files for flask app</li>
- <li><b>templates</b> - Templates of flask app</li>
-</ul>
-
+- **research** - Contains base research paper and `experiments.ipynb` notebook
+- **CMaps** - Data collected on different settings and configurations by NASA
+- **rul** - Contains all the components, configurations, artifacts and pipelines
+  - `components` - Components of Data Pipelines
+  - `entity` - Configuration and artifact entity of components
+  - `pipeline` - Training and Batch pipeline
+  - `config.py` - Configuration of `rul` package
+  - `exception.py` - Exception handler of `rul` package
+  - `logger.py` - Logger of `rul` package
+  - `predictor.py` - Model Resolver
+  - `utils.py` - Collection of utility functions
+- **static** - Static files for flask app
+- **templates** - Templates of flask app
+  
 
 ![-----------------------------------------------------](assets/rgb.png)
 
@@ -256,7 +253,7 @@ Copyright (c) 2022 Abhijeet Srivastav
       outstanding shares, or (iii) beneficial ownership of such entity.
 
       "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License. .......
+      exercising permissions granted by this License........
 ```
 [Apache License](https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/LICENSE)
 
