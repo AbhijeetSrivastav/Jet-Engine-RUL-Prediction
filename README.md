@@ -181,7 +181,8 @@ To get a local copy up and running follow these simple example steps.
   </table>
 </center>
 
-![Demo Video](https://drive.google.com/file/d/14HazGAvVN9XcPZuk_mXXZ9oR06NvWi5I/view?usp=sharing)
+
+<a href="https://drive.google.com/file/d/14HazGAvVN9XcPZuk_mXXZ9oR06NvWi5I/view?usp=sharing" target="_blank"><b>Demo Video</b></a>
 
 
 ![-----------------------------------------------------](assets/rgb.png)
