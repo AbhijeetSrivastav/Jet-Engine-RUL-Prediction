@@ -40,7 +40,7 @@ body {
   flex-basis: auto;
   align-self: auto;
   order: 0;
-  height: max-content;
+  height: 95vh;
   width: 60%;
 }
 
@@ -152,16 +152,17 @@ body {
 
 .image-wall{
   margin: auto;
+  margin-left: 2em;
   justify-content: left;
   width: 80%;
   height: 100vh;
 }
 
 .header-home {
-  color: white;
-  font-size: 2.5em;
-  margin-top: 2em;
-  padding: 2rem;
+  color: #9733EE;
+  font-size: 3em;
+  margin-top: 1.6em;
+  padding: 0.6em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -187,7 +188,7 @@ body {
 }
 
 .fa {
-  padding: 0em;
+  padding: 0.2em;
   font-size: 2em;
   width: 2em;
   text-align: center;
@@ -207,8 +208,8 @@ body {
 .foot-note{
   color: #9733EE;
   font-size: 1em;
-  margin-top: 2em;
-  padding: 2rem;
+  margin-top: 1em;
+  padding: 1em;
   text-align: center;
 }
 
