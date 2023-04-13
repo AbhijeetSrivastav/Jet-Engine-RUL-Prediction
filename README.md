@@ -1,5 +1,3 @@
-# APS Sensor Fault Detection 
-
 <h1 align="center"> Jet Engine Remaining Useful Life Prediction</h1>
 
 <p align="center"> 
