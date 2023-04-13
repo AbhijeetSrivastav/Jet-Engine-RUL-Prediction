@@ -166,20 +166,20 @@ To get a local copy up and running follow these simple example steps.
 <center>
   <table>
     <tr>
-      <td><img width="600" alt="Support Vector Regression" src="Assets\svr.png"></td>
-      <td><img width="600" alt="Random Forest Regression" src="Assets\rfr.png"></td>
+      <td><img width="600" alt="Show 1" src="assets\show (8).png"></td>
+      <td><img width="600" alt="show 2" src="assets\show (9).png"></td>
     </tr>
     <tr>
-      <td><img width="600" alt="Polynomial Regression" src="Assets\pr.png"></td>
-      <td><img width="600" alt="Multiple Regression" src="Assets\mr.png"></td>
+      <td><img width="600" alt="show 3" src="assets\show (10).png"></td>
+      <td><img width="600" alt="show 4" src="assets\show (11).png"></td>
     </tr>
     <tr>
-      <td><img width="600" alt="Linear Regression" src="Assets\lr.png"></td>
-      <td><img width="600" alt="Artificial Neural Network" src="Assets\ann.png"></td>
+      <td><img width="600" alt="show 5" src="assets\show (12).png"></td>
+      <td><img width="600" alt="show 6" src="assets\show (13).png"></td>
     </tr>
     <tr>
-      <td><img width="600" alt="Dendogram" src="Assets\dg.png"></td>
-      <td><img width="600" alt="Clustering" src="Assets\cl.png"></td>
+      <td><img width="600" alt="show 7" src="assets\show (14).png"></td>
+      <td><img width="600" alt="show 8" src="assets\show (15).png"></td>
     </tr>
   </table>
 </center>
