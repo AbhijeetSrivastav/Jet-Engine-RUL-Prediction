@@ -52,6 +52,7 @@ Refer the following documents for better understanding of the dimensions of proj
 <ul>
     <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/HLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">High Level Documentation (HLD)</a></li>
     <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/LLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">Low Level Documentation (LLD)</a></li>
+    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/DPR_1.0v_%20Jet_%20Engine_%20RUL_Prediction.pdf" target="_blank">Detailed Project Report (DPR)</a></li>
 
 </ul>
 
@@ -95,10 +96,6 @@ perform a routine checkup.
 
 <a href="https://www.docker.com/" target="_blank">
     <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/blob/main/LanguageToolsIcon/docker/docker.png" alt="docker" height='42px'/>
-</a>
-
-<a href="https://www.mongodb.com/" target="_blank">
-    <img align="left" src="https://github.com/AbhijeetSrivastav/AbhijeetSrivastav/tree/main/LanguageToolsIcon/mongo/mongodb.jpg" alt="mongodb" height='42px'/>
 </a>
 
 
@@ -184,6 +181,8 @@ To get a local copy up and running follow these simple example steps.
   </table>
 </center>
 
+![Demo Video](https://drive.google.com/file/d/14HazGAvVN9XcPZuk_mXXZ9oR06NvWi5I/view?usp=sharing)
+
 
 ![-----------------------------------------------------](assets/rgb.png)
 
@@ -215,6 +214,7 @@ However, if you are using this project and are happy with it or just want to enc
 
 - Giving proper credit when you use Machine Learning Guide, linking back to it :D
 - Starring and sharing the project :rocket:
+  
 Thanks! :heart:
 
 
