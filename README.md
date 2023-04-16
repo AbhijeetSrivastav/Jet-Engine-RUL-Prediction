@@ -52,7 +52,9 @@ Refer the following documents for better understanding of the dimensions of proj
 <ul>
     <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/HLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">High Level Documentation (HLD)</a></li>
     <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/LLD_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">Low Level Documentation (LLD)</a></li>
-    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/DPR_1.0v_%20Jet_%20Engine_%20RUL_Prediction.pdf" target="_blank">Detailed Project Report (DPR)</a></li>
+    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/Architecture_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">Architecture (ADD)</a></li>
+    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/tree/main/documentation" target="_blank">Detailed Project Report (DPR)</a></li>
+    <li><a href="https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction/blob/main/documentation/Wireframe_1.0v_Jet-Engine-RUL-Prediction.pdf" target="_blank">Wireframe</a></li>
 
 </ul>
 
