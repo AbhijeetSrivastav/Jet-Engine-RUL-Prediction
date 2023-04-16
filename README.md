@@ -259,7 +259,7 @@ Abhijeet Srivastav
 
 - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-0e76a8?style=style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/abhijeet-srivastav-02245a18b/)
 
-- [![Instagram Badge](https://img.shields.io/badge/-Instagram-e4405f?style=style=for-thebadge&logo=Instagram&logoColor=white)](https://instagram.com/abhijeet.codes/)
+- [![Instagram Badge](https://img.shields.io/badge/-Instagram-e4405f?style=style=for-thebadge&logo=Instagram&logoColor=white)](https://www.instagram.com/abhijeet.ai_/)
 
 
 
