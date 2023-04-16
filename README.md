@@ -211,7 +211,7 @@ this takes time. You can use this service for free.
 
 However, if you are using this project and are happy with it or just want to encourage me to continue creating stuff, there are few ways you can do it :-
 
-- Giving proper credit when you use Machine Learning Guide, linking back to it :D
+- Giving proper credit when you using this project, linking back to it :D
 - Starring and sharing the project :rocket:
   
 Thanks! :heart:
