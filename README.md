@@ -128,28 +128,24 @@ perform a routine checkup.
 <!-- GETTING STARTED -->
 <h2 id="getting-started"> :pushpin: Getting Started</h2>
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This is how you can set up your project locally. To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
 <pre><code>$ git clone https://github.com/AbhijeetSrivastav/Jet-Engine-RUL-Prediction.git</code></pre>
 
-1. Create conda environment
+2. Create conda environment
 <pre><code>$ conda create -n jet-rul</code></pre>
 
-1. Activate the conda environment
+3. Activate the conda environment
 <pre><code>$ conda activate jet-rul </code></pre>
 
-1. Install requirements to conda environment
+4. Install requirements to conda environment
 <pre><code>$ pip install -r requirements.txt</code></pre>
 
-1. Navigate to project directory
+5. Navigate to project directory
 <pre><code>$ cd "Project Directory"</code></pre>
 
-1. Run flask app to get access to pipelines UI
+6. Run flask app to get access to pipelines UI
 <pre><code>$ python app.py </code></pre>
 
 
